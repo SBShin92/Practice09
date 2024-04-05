@@ -48,10 +48,8 @@ public class RecListApp {
 		
 		System.out.println("#모든 사각형의 넓이 합 출력=======================================");
 		//모든 사각형의 넓이 합 구하기 코드 작성
-		Iterator<Rectangle> iter = rList.iterator();
-		while (iter.hasNext()) {
-			tmp = iter.next();
-			sum += tmp.getHeight() * tmp.getWidth();
+		for (Rectangle node: rList) {
+			sum += node.area();
 		}
 		//모든 사각형의 합 출력
 		System.out.println("모든 사각형의 넓이는 " + sum + " 입니다.");
