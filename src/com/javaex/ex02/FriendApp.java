@@ -16,7 +16,7 @@ public class FriendApp {
         String[] splitLine;
 
 
-        System.out.println("친구를 3명 등록해 주세요");
+        System.out.println("친구를 3명 등록해 주세요 [전화번호는 꼭 'xxx-xxxx-xxxx' 형태로 입력하세요]");
         for (int i = 0; i < 3; i++) {
             inputLine = sc.nextLine();
 
@@ -44,11 +44,9 @@ public class FriendApp {
         Matcher matcher = pattern.matcher(inputLine);
 
         if (matcher.matches()) {
-            String[] tmp = new String[]{matcher.group(1),
+            return new String[]{matcher.group(1),
                     matcher.group(2),
                     matcher.group(3)};
-            System.out.println(matcher.group(1));
-            return tmp;
         }
         return null;
     }
