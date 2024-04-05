@@ -11,7 +11,7 @@ public class GoodsApp {
         String inputLine;
         String[] splitLine;
 
-        System.out.println("상품을 입력해주세요(종료 q)[ 입력예시>> LG그램,9000,5 ]");
+        System.out.println("상품을 입력해주세요(종료 q)[ 입력방법>>상품명,가격,갯수 ]");
         while (true) {
             inputLine = sc.nextLine().trim();
             if (inputLine.equals("q"))
@@ -24,7 +24,9 @@ public class GoodsApp {
                 tmp.setCount(Integer.parseInt(splitLine[2].trim()));
                 goodsList.add(tmp);
             } catch (NumberFormatException e) {
-                System.err.println("잘못된 입력");
+                System.err.println("가격, 갯수는 숫자로 입력해주세요");
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.err.println("잘못 입력했습니다");
             }
         }
         System.out.println("[입력완료]");
