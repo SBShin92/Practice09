@@ -18,10 +18,10 @@ public class GoodsApp {
                 break;
             splitLine = inputLine.split(",");
             Goods tmp = new Goods();
-            tmp.setName(splitLine[0]);
+            tmp.setName(splitLine[0].trim());
             try {
-                tmp.setPrice(Integer.parseInt(splitLine[1]));
-                tmp.setCount(Integer.parseInt(splitLine[2]));
+                tmp.setPrice(Integer.parseInt(splitLine[1].trim()));
+                tmp.setCount(Integer.parseInt(splitLine[2].trim()));
                 goodsList.add(tmp);
             } catch (NumberFormatException e) {
                 System.err.println("잘못된 입력");
