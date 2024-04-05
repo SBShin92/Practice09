@@ -3,6 +3,8 @@ package com.javaex.ex02;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FriendApp {
 
@@ -16,9 +18,12 @@ public class FriendApp {
 
         System.out.println("친구를 3명 등록해 주세요");
         for (int i = 0; i < 3; i++) {
-            inputLine = sc.nextLine().trim();
-            splitLine = inputLine.split("\\s+");
-            // isValue?? 넣긴 해야 되는데...
+            inputLine = sc.nextLine();
+
+           splitLine = myRegex(inputLine);
+           if (splitLine == null)
+               continue;
+
             Friend tmp = new Friend();
             tmp.setName(splitLine[0]);
             tmp.setHp(splitLine[1]);
@@ -31,6 +36,21 @@ public class FriendApp {
         }
 
     	sc.close();
+    }
+
+    private static String[] myRegex(String inputLine) {
+
+        Pattern pattern = Pattern.compile("\\s*(\\w+)\\s+([0-9]+-[0-9]+-[0-9]+)\\s+(\\w+)\\s*");
+        Matcher matcher = pattern.matcher(inputLine);
+
+        if (matcher.matches()) {
+            String[] tmp = new String[]{matcher.group(1),
+                    matcher.group(2),
+                    matcher.group(3)};
+            System.out.println(matcher.group(1));
+            return tmp;
+        }
+        return null;
     }
 
 }
