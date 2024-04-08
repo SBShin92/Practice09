@@ -39,12 +39,11 @@ public class RecListApp {
 		//사각형(2,2) 수정 코드 작성
 		Rectangle tmp;
 		tmp = new Rectangle(4, 5);
-		for (Rectangle o: rList) {
-			if (o.equals(tmp)) {
-				o.setWidth(9);
-				o.setHeight(5);
-				break ;
-			}
+
+		if (rList.contains(tmp)) {
+			tmp = rList.get(rList.indexOf(tmp));
+			tmp.setWidth(9);
+			tmp.setHeight(5);
 		}
 		//리스트 모두를 draw하는 메소드 실행
 		listAllDraw(rList);
