@@ -38,7 +38,13 @@ public class RecListApp {
 		System.out.println("#4번째 사각형(4, 5)-->(9, 5)로 width 값 변경======================");
 		//사각형(2,2) 수정 코드 작성
 		Rectangle tmp;
-		tmp = rList.get(2);
+		tmp = new Rectangle(4, 5);
+		for (Rectangle o: rList) {
+			if (o.equals(tmp)) {
+				tmp = o;
+				break ;
+			}
+		}
 		tmp.setWidth(9);
 		tmp.setHeight(5);
 		//리스트 모두를 draw하는 메소드 실행

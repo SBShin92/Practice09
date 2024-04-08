@@ -1,5 +1,7 @@
 package com.javaex.ex01;
 
+import java.util.Objects;
+
 public class Rectangle {
 
 	//필드
@@ -47,7 +49,19 @@ public class Rectangle {
 				           " 넓이:" + this.area() +
 				           " 을 그렸습니다.");
 	}
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Rectangle rectangle)) return false;
+        return width == rectangle.width && height == rectangle.height;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(width, height);
+	}
+
 	@Override
 	public String toString() {
 		return "Rectangle [width=" + width + ", height=" + height + "]";
