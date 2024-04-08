@@ -42,11 +42,11 @@ public class RecListApp {
 		for (Rectangle o: rList) {
 			if (o.equals(tmp)) {
 				tmp = o;
+				tmp.setWidth(9);
+				tmp.setHeight(5);
 				break ;
 			}
 		}
-		tmp.setWidth(9);
-		tmp.setHeight(5);
 		//리스트 모두를 draw하는 메소드 실행
 		listAllDraw(rList);
 		
