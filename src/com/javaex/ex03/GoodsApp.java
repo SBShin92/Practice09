@@ -18,8 +18,8 @@ public class GoodsApp {
                 break;
             splitLine = inputLine.split(",");
             Goods tmp = new Goods();
-            tmp.setName(splitLine[0].trim());
             try {
+                tmp.setName(splitLine[0].trim());
                 tmp.setPrice(Integer.parseInt(splitLine[1].trim()));
                 tmp.setCount(Integer.parseInt(splitLine[2].trim()));
                 goodsList.add(tmp);
