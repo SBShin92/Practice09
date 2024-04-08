@@ -41,9 +41,8 @@ public class RecListApp {
 		tmp = new Rectangle(4, 5);
 		for (Rectangle o: rList) {
 			if (o.equals(tmp)) {
-				tmp = o;
-				tmp.setWidth(9);
-				tmp.setHeight(5);
+				o.setWidth(9);
+				o.setHeight(5);
 				break ;
 			}
 		}
