@@ -1,7 +1,5 @@
 package com.javaex.ex01;
 
-import java.util.Objects;
-
 public class Rectangle {
 
 	//필드
@@ -55,11 +53,6 @@ public class Rectangle {
 		if (this == o) return true;
 		if (!(o instanceof Rectangle rectangle)) return false;
         return width == rectangle.width && height == rectangle.height;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(width, height);
 	}
 
 	@Override
